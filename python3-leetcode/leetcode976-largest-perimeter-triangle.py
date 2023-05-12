@@ -5,10 +5,14 @@ class Solution:
             return 0
 
         A.sort(reverse=True)
-        for i in range(len(A)-2):
-            if A[i] < A[i+1] + A[i+2]:  # Can build a triangle
-                return A[i] + A[i+1] + A[i+2]
-        return 0
+        return next(
+            (
+                A[i] + A[i + 1] + A[i + 2]
+                for i in range(len(A) - 2)
+                if A[i] < A[i + 1] + A[i + 2]
+            ),
+            0,
+        )
 
 # Below is testing
 sol = Solution()

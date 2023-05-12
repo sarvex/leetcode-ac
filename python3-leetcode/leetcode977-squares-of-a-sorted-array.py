@@ -3,10 +3,7 @@ from typing import List
 class Solution:
     def sortedSquares(self, A: List[int]) -> List[int]:
         B = sorted(A, key = abs) # sort by absolute values
-        res = list()
-        for elem in B:
-            res.append(elem*elem)
-        return res
+        return [elem*elem for elem in B]
 
 # below is testing        
 sol = Solution()

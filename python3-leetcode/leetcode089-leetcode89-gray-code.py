@@ -3,10 +3,7 @@ from typing import List
 
 class Solution:
     def grayCode(self, n: int) -> List[int]:
-        res = [] 
-        for i in range(1 << n): 
-            res.append((i >> 1) ^ i) 
-        return res
+        return [(i >> 1) ^ i for i in range(1 << n)]
         
 # Below is testing
 obj = Solution()

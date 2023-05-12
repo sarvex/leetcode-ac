@@ -9,8 +9,8 @@ class Solution:
     def GetSquareSum(self, n: int) -> bool:
         sum0 = 0
         while n > 0:
-            r = n - int(n/10)*10
-            n = int(n/10)
+            r = n - n // 10 * 10
+            n //= 10
             sum0 += r * r
         return sum0
 
